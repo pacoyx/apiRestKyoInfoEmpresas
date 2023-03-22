@@ -10,6 +10,8 @@
         public string EmpresasCollectionName { get; set; } = null!;
         public string GuiaCollectionName { get; set; } = null!;
         public string PerfilCollectionName { get; set; } = null!;
+        public string EmpleadoCollectionName { get; set; } = null!;
+        public string VehiculoCollectionName { get; set; } = null!;
     }
 
 
@@ -22,6 +24,8 @@
         string EmpresasCollectionName { get; set; }
         string GuiaCollectionName { get; set; }
         string PerfilCollectionName { get; set; }
+        string EmpleadoCollectionName { get; set; }
+        string VehiculoCollectionName { get; set; }
 
 
     }

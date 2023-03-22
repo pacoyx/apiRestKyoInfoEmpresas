@@ -60,6 +60,8 @@ builder.Services.AddSingleton<UsuarioService>();
 builder.Services.AddSingleton<GuiaService>();
 builder.Services.AddSingleton<PerfilService>();
 builder.Services.AddSingleton<EmpresaService>();
+builder.Services.AddSingleton<EmpleadoService>();
+builder.Services.AddSingleton<VehiculoService>();
 
 
 builder.Services.AddAuthentication(opt =>

@@ -16,9 +16,12 @@ namespace apiRestKyoInfoEmpresas.Services
 
             var mongoClient = new MongoClient(settings);
             var mongoDatabase = mongoClient.GetDatabase(bookStoreDatabaseSettings.Value.DatabaseName);
-            _empresaCollection = mongoDatabase.GetCollection<Empresa>(bookStoreDatabaseSettings.Value.EmpresasCollectionName);}
-        public async Task<List<Empresa>> GetAsync() => await _empresaCollection.Find(_ => true).ToListAsync();
+            _empresaCollection = mongoDatabase.GetCollection<Empresa>(bookStoreDatabaseSettings.Value.EmpresasCollectionName);
+        }
+        public async Task<List<Empresa>> GetAsync() => await _empresaCollection.Find(_ => true).ToListAsync().ConfigureAwait(false);
         public async Task<Empresa?> GetAsync(string id) =>  await _empresaCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
         public async Task CreateAsync(Empresa newEmpresa) => await _empresaCollection.InsertOneAsync(newEmpresa);
+
+
     }
 }
